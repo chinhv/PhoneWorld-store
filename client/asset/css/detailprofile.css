@@ -1,0 +1,74 @@
+
+a:hover {
+    opacity: 1;
+}
+  
+p {
+    line-height: 100%;
+}
+
+#bar {
+    width: 500px;
+    margin: 40px auto;
+    padding: 35px 20px 20px;
+    position: relative;
+    text-align: center;
+    border: 3px solid #000;
+    background-color: #fff;
+}
+
+#avatar {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    background-image: url("../img/default-avatar-profile-icon-vector-social-media-user-image-182145777.jpg");
+    background-size: 100%;
+}
+
+p.loc {
+    margin-top: 5px;
+    color: #999;
+    font-size: 1em;
+}
+p.loc span {
+    margin-right: 5px;
+}
+
+section h3 {
+    font-size: 1.3em;
+}
+
+#desc,
+#social,
+h3 {
+    margin-top: 15px;
+    padding: 0;
+    color: #333;
+}
+
+#desc p{
+    margin-bottom: 8px;
+}
+
+#follow {
+    width: 100%;
+    margin: 15px auto 0 auto;
+}
+
+#follow p {
+    width: auto;
+    margin: 0 10px;
+    padding: 5px 5px 2px 5px;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 120%;
+    text-transform: uppercase;
+    border: 3px solid #333;
+    color: #333;
+}
+#follow p:hover {
+    color: #fff;
+    background-color: #333;
+    cursor: pointer;
+}

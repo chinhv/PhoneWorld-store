@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./asset/css/admin.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h2>SmartPhone Store - Admin</h2>
+    </header>
+    <aside class="sidebar">
+        <ul class="nav">
+            <li class="nav-title">MENU</li>
+            <li class="nav-item"><a class="nav-link active">Sản Phẩm</a></li>
+            <li class="nav-item"><a class="nav-link">Đơn Hàng</a></li>
+            <li class="nav-item"><a class="nav-link">Khách Hàng</a></li>
+            <li class="nav-item">
+                <hr>
+            </li>
+            <li class="nav-item-admin">
+                <p class="nav-link">
+                    Đăng xuất (về Trang chủ)
+                </p>
+            </li>
+        </ul>
+    </aside>
+    <div class="main">
+        <table class="product">
+            <tr class="table-header-1">
+              <th width="10%">ID</th>
+              <th width="30%">Tên sản phẩm</th>
+              <th width="20%">Giá</th>
+              <th width="20%">Hình ảnh</th>
+              <th width="10%">Hãng sản xuất</th>
+              <th width="10%">Hành động</th>
+            </tr>
+
+          </table>
+          <table class="user">
+            
+          </table>
+          <table class="order">
+            <tr class="table-header-3">
+              <th width="10%">ID</th>
+              <th width="20%">Tên khách hàng</th>
+              <th width="20%">SĐT</th>
+              <th width="30%">Địa chỉ</th>
+              <th width="10%">Trạng thái</th>
+              <th width="10%">Hành động</th>
+            </tr>
+          </table>
+          <div class="table-footer">
+            <select name="kieuTimSanPham">
+                <option value="ten">Điện thoại</option>
+                <option value="ten">Máy tính bảng</option>
+                <option value="ten">Phụ kiện</option>
+            </select>
+            <input type="text" placeholder="Tìm kiếm...">
+            <button>
+                Thêm sản phẩm
+            </button>
+            <div class="bar">
+              <div class="pagination">
+                  <p href="#">«</p>
+                  <p class="active" href="#">1</p>
+                  <p href="#">2</p>
+                  <p href="#">3</p>
+                  <p href="#">4</p>
+                  <p href="#">»</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    <script>
+        const navItems = document.querySelectorAll(".nav-link");
+        const userTable = document.querySelector(".user");
+        const productTable = document.querySelector(".product");
+        const orderTable = document.querySelector(".order");
+        navItems.forEach((navItem, index) => {
+          navItem.onclick = () =>{
+            document.querySelector(".nav-link.active").classList.remove("active")
+            navItem.classList.add("active")
+            if(navItem.innerHTML === "Sản Phẩm"){
+              productTable.style.display = 'table'
+              userTable.style.display = 'none'
+              orderTable.style.display = 'none'
+            }else if(navItem.innerHTML === "Khách Hàng"){
+              productTable.style.display = 'none'
+              userTable.style.display = 'table'
+              orderTable.style.display = 'none'
+            }else if(navItem.innerHTML === "Đơn Hàng"){
+              productTable.style.display = 'none'
+              userTable.style.display = 'none'
+              orderTable.style.display = 'table'
+            }
+          }
+        })
+    </script>
+    <script src="./asset/js/admin.js"></script>
+</body>
+</html>

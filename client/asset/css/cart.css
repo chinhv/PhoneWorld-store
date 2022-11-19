@@ -1,0 +1,32 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+th, td {
+    text-align: center;
+    border: 1px solid #333;
+    padding: 10px;
+    font-size: 16px;
+}
+  
+tr:nth-child(even){background-color: #ccc}
+
+th {
+    background-color: #04AA6D;
+    color: white;
+}
+.table-footer {
+    height: 50px;
+}
+.table-footer td{
+    font-size: 18px;
+    font-weight: bold;
+}
+.payment:hover{
+    cursor: pointer;
+    background-color: #04AA6D;
+}
+.deleteBtn:hover{
+    cursor: pointer;
+}
