@@ -2,7 +2,7 @@ const product = document.querySelector(".product")
 const user = document.querySelector(".user")
 const order = document.querySelector(".order")
 const pageBtn = document.querySelectorAll(".pagination p")
-
+var category = ""
 const productHeader = `
     <tr class="table-header-1">
         <th width="10%">ID</th>
@@ -28,7 +28,7 @@ pageBtn.forEach((page) => {
         page.classList.add("active");
         let pageNumber = parseInt(page.innerHTML) - 1
         pageNumber = pageNumber.toString()
-        fetch("http://localhost:8080/api/product/all" + "?page=" + pageNumber)
+        fetch("http://localhost:8080/api/product/options" +"?categoryName=" + category + "&page=" + pageNumber)
             .then(response => response.json())
             .then(data => {
                 let productList = data.products;
@@ -119,3 +119,29 @@ logOutBtn.onclick = () =>{
         .catch(err => console.error(err))
     window.location.href = "trangchu.html?" + null
 }
+
+const selectInput = document.querySelector(".category-list")
+selectInput.onchange = () =>{
+    category = selectInput.value
+    fetch("http://localhost:8080/api/product/options" + "?categoryName=" + category + "&page=0&pageSize=8")
+        .then(response => response.json())
+        .then(data => {
+            let productList = data.products;
+            const htmls = productList.map(product =>{
+                return `
+                    <tr>
+                        <td class="product-id">${product.id}</td>
+                        <td>${product.name}</td>
+                        <td>${product.price}đ</td>
+                        <td><img width="50px" height="50px" src="${product.imgPath}" ></td>
+                        <td>${product.manufacturer.manufacturerName}</td>
+                        <td>Xóa</td>
+                    </tr>
+                `
+            })
+            product.innerHTML = productHeader + htmls.join("\n")
+        })
+    
+}
+
+

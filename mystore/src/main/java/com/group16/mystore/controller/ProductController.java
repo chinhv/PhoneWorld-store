@@ -48,7 +48,7 @@ public class ProductController {
     @GetMapping("/all")
     public ResponseEntity<Map<String, Object>> findAllProducts(
         @RequestParam(defaultValue = "0", value = "page") String page,
-        @RequestParam(defaultValue = "12", value = "size") String pageSize
+        @RequestParam(defaultValue = "8", value = "size") String pageSize
     ){
         List<Product> products = new ArrayList<>();
         Page<Product> pageTuts = service.getAllProducts(Integer.parseInt(page), Integer.parseInt(pageSize));
