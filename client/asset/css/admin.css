@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+hr {
+    color: rgb(95, 95, 95);
+    background-color: rgb(95, 95, 95);
+    border-top: 2px solid rgb(95, 95, 95);
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+header {
+    z-index: 10;
+    width: 100%;
+    /* position: sticky; */
+    padding: 20px 10px;
+    background-color: #3a4149;
+    border-bottom: 1px solid #23282c;
+}
+
+header h2 {
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* =========== Menu ================= */
+.sidebar {
+    float: left;
+    width: 170px;
+    background-color: #2f353a;
+    height: 986px;
+}
+
+.sidebar .nav-title {
+    padding: 1.1rem 1rem;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #e4e7ea;
+    text-align: center;
+    text-transform: uppercase;
+}
+.sidebar .nav-item-admin,
+.sidebar .nav-item {
+    position: relative;
+    margin: 0;
+}
+
+.sidebar .nav-link {
+    display: block;
+    padding: 1em 1em;
+    color: #73818f;
+    text-decoration: none;
+    background: 0 0;
+    cursor: pointer;
+}
+
+.sidebar .nav-link.active
+{
+    background-color: #20a8d8;
+    color: #fff;
+}
+
+.sidebar .nav-link:hover:not(.active)
+{
+    background-color: #4a7b8d;
+    color: #fff;
+}
+.main {
+    float: left;
+    width: calc(100% - 170px);
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.order,
+.user{
+    display: none;
+}
+  
+th, td {
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #04AA6D;
+    color: white;
+}
+.table-footer {
+    background-color: #3e464d;
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #23282c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-footer input,
+.table-footer button,
+.table-footer select {
+    padding: 5px 10px;
+    border: 3px solid transparent;
+    background-color: #cccece;
+    margin: 0 8px;
+}
+
+/* Nút bấm ở footer */
+.table-footer button {
+    cursor: pointer;
+    background-color: #23282c;
+    color: #e4e7ea;
+    transition-duration: .2s;
+}
+
+.table-footer button:hover {
+    background-color: #7a879486;
+    border-color: #73818f;
+}
+.bar{
+    background-color:  #cccece;
+}
+
+.pagination p {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    cursor: pointer;
+}
+ /* thiết lập style cho class active */
+.pagination p.active {
+    background-color: dodgerblue;
+    color: white;
+}
+ /* thêm màu nền khi người dùng hover vào class không active */
+.pagination p:hover:not(.active) {
+    background-color: #ddd;
+}
+
+.btn-accept{
+    border-radius: 5px;
+    padding: 8px;
+}

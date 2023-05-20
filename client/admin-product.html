@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./asset/css/admin-product.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h2>SmartPhone Store - Admin</h2>
+    </header>
+    <div class="container">
+        <h3 class="product-header">
+            Thông tin sản phẩm
+        </h3>
+        <div class="product-wrapper">
+            <form class="form">
+                <div class="form-group">
+                    <label for="product-name">Tên sản phẩm</label>
+                    <input type="text" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="product-img">Ảnh</label>
+                    <input type="file" name="imageFile">
+                </div>
+                <div class="form-group">
+                    <label for="product-description">Mô tả</label>
+                    <input type="text" name="description">
+                </div>
+                <div class="form-group">
+                    <label for="product-price">Giá</label>
+                    <input type="number" name="price">
+                </div>
+                <div class="form-group">
+                    <label for="product-cpu">CPU</label>
+                    <input type="text" name="cpu">
+                </div>
+                <div class="form-group">
+                    <label for="product-ram">Ram</label>
+                    <input type="text" name="ram">
+                </div>
+                <div class="form-group">
+                    <label for="product-battery">Dung lương pin</label>
+                    <input type="text" name="battery">
+                </div>
+                <div class="form-group">
+                    <label for="category">Mã danh mục</label>
+                    <input type="number" name="categoryId">
+                </div>
+                <div class="form-group">
+                    <label for="manufacturer">Mã hãng sản xuất</label>
+                    <input type="number" name="manufacturerId">
+                </div>
+                <div class="form-group-btn">
+                    <button class="btn-back">Quay lại</button>
+                    <button class="btn-add">Thêm</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="./asset/js/admin-product.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./asset/css/login-signup.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="form">
+        <div class="form-toggle"></div>
+        <div class="form-panel one">
+          <div class="form-header">
+            <h1>ĐĂNG NHẬP</h1>
+          </div>
+          <div class="form-content">
+            <form>
+              <div class="form-group">
+                <label for="username">Email</label>
+                <input id="username" type="text" name="username-login" required="required"/>
+              </div>
+              <div class="form-group">
+                <label for="password">Mật khẩu</label>
+                <input id="password" type="password" name="password-login" required="required"/>
+              </div>
+              <div class="form-group">
+                <label class="form-remember">
+                  <input type="checkbox"/>Ghi nhớ
+                </label><a class="form-recovery" href="#">Quên mật khẩu?</a>
+              </div>
+              <div class="form-group">
+                <button id="login" type="submit">Đăng Nhập</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="form-panel two">
+          <div class="form-header">
+            <h1>ĐĂNG KÝ</h1>
+          </div>
+          <div class="form-content">
+            <form>
+              <div class="form-group">
+                <label for="username">Tên tài khoản</label>
+                <input id="username" type="text" name="username-register" required="required"/>
+              </div>
+              <div class="form-group">
+                <label for="password">Mật khẩu</label>
+                <input id="password" type="password" name="password-register" required="required"/>
+              </div>
+              <div class="form-group">
+                <label for="cpassword">Số điện thoại</label>
+                <input id="phone" type="text" name="phone" required="required"/>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" type="email" name="email" required="required"/>
+              </div>
+              <div class="form-group">
+                <button id="register" type="submit">Đăng Ký</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+    <script>
+        var panelOneHeight = document.querySelector(".form-panel.one").scrollHeight,
+            panelTwoHeight = document.querySelector(".form-panel.two").scrollHeight;
+        var panelOne = document.querySelector(".form-panel.one")
+        var panelTwo = document.querySelector(".form-panel.two")
+        var formToggle = document.querySelector(".form-toggle")
+        panelTwo.onclick = () =>{
+            formToggle.classList.add("visible");
+            panelOne.classList.add("hidden");
+            panelTwo.classList.add("active");
+            document.querySelector(".form").style.height = panelTwoHeight + "px";
+        }
+        formToggle.onclick = () =>{
+            formToggle.classList.remove("visible");
+            panelOne.classList.remove("hidden");
+            panelTwo.classList.remove("active");
+            document.querySelector(".form").style.height = panelOneHeight + "px";
+        }
+    </script>
+    <script src="./asset/js/login&signup.js"></script>
+</body>
+</html>

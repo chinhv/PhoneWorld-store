@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./asset/css/admin.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h2>SmartPhone Store - Admin</h2>
+    </header>
+    <aside class="sidebar">
+        <ul class="nav">
+            <li class="nav-title">MENU</li>
+            <li class="nav-item"><a class="nav-link active">Sản Phẩm</a></li>
+            <li class="nav-item"><a class="nav-link">Đơn Hàng</a></li>
+            <li class="nav-item"><a class="nav-link">Khách Hàng</a></li>
+            <li class="nav-item">
+                <hr>
+            </li>
+            <li class="nav-item-admin">
+                <p class="nav-link">
+                    Đăng xuất (về Trang chủ)
+                </p>
+            </li>
+        </ul>
+    </aside>
+    <div class="main">
+          <table class="product">
+
+          </table>
+          <table class="user">
+            
+          </table>
+          <table class="order">
+            
+          </table>
+          <div class="table-footer">
+            <select class="category-list" name="kieuTimSanPham">
+                <option class="category-item" value="Điên thoại">Điện thoại</option>
+                <option class="category-item" value="Máy tính bảng">Máy tính bảng</option>
+                <option class="category-item" value="Phụ kiện">Phụ kiện</option>
+            </select>
+            <input type="text" placeholder="Tìm kiếm..." name="search">
+            <button>
+              <a href="admin-product.html">Thêm sản phẩm</a>
+            </button>
+            <button class="btn-back" style="display: none">Quay lại</button>
+            <div class="bar">
+              <div class="pagination">
+                  <p href="#">«</p>
+                  <p class="active" href="#">1</p>
+                  <p href="#">2</p>
+                  <p href="#">3</p>
+                  <p href="#">4</p>
+                  <p href="#">5</p>
+                  <p href="#">»</p>
+              </div>
+            </div>
+          </div>
+      </div>
+    <script>
+        const navItems = document.querySelectorAll(".nav-link");
+        const userTable = document.querySelector(".user");
+        const productTable = document.querySelector(".product");
+        const orderTable = document.querySelector(".order");
+        const categoryList = document.querySelector(".category-list")
+        const input = document.querySelector("input[name='search']")
+        const addBtn = document.querySelector(".table-footer button")
+        const bar = document.querySelector(".bar")
+        const btnBack = document.querySelector(".btn-back")
+        
+        navItems.forEach((navItem, index) => {
+          navItem.onclick = () =>{
+            document.querySelector(".nav-link.active").classList.remove("active")
+            navItem.classList.add("active")
+            if(navItem.innerHTML === "Sản Phẩm"){
+              productTable.style.display = 'table'
+              userTable.style.display = 'none'
+              orderTable.style.display = 'none'
+              categoryList.style.display = 'block'
+              input.style.display = 'block'
+              addBtn.style.display = 'block'
+              bar.style.display = 'block'
+              
+              btnBack.style.display = 'none'
+            }else if(navItem.innerHTML === "Khách Hàng"){
+              productTable.style.display = 'none'
+              userTable.style.display = 'table'
+              orderTable.style.display = 'none'
+              categoryList.style.display = 'none'
+              input.style.display = 'none'
+              addBtn.style.display = 'none'
+              bar.style.display = 'none'
+              btnBack.style.display = 'none'
+              
+            }else if(navItem.innerHTML === "Đơn Hàng"){
+              productTable.style.display = 'none'
+              userTable.style.display = 'none'
+              orderTable.style.display = 'table'
+              categoryList.style.display = 'none'
+              input.style.display = 'none'
+              addBtn.style.display = 'none'
+              bar.style.display = 'none'
+              btnBack.style.display = 'none'
+              
+            }
+          }
+        })
+    </script>
+    <script src="./asset/js/admin.js"></script>
+</body>
+</html>
